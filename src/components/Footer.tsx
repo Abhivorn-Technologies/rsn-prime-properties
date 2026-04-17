@@ -1,13 +1,17 @@
+import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Linkedin, Twitter, Phone, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/rsn-logo.png";
 
 const quickLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Properties", href: "#properties" },
-  { label: "Contact", href: "#contact" },
-];
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Services", to: "/services" },
+  { label: "Properties", to: "/properties" },
+  { label: "Why Choose Us", to: "/why-choose-us" },
+  { label: "Testimonials", to: "/testimonials" },
+  { label: "Contact", to: "/contact" },
+] as const;
+
 const services = [
   "Open Plots & Flats",
   "Luxury Villas",
@@ -46,10 +50,10 @@ export function Footer() {
             <h4 className="text-lg font-bold">Quick Links</h4>
             <ul className="mt-4 space-y-2">
               {quickLinks.map((l) => (
-                <li key={l.label}>
-                  <a href={l.href} className="text-accent-foreground/80 hover:text-primary-glow transition-colors text-sm">
+                <li key={l.to}>
+                  <Link to={l.to} className="text-accent-foreground/80 hover:text-primary-glow transition-colors text-sm">
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

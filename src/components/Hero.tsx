@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "@tanstack/react-router";
 import { ArrowRight, Phone, ShieldCheck, MapPin, Award } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -62,20 +63,20 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="mt-8 flex flex-wrap gap-4"
           >
-            <a
-              href="#properties"
+            <Link
+              to="/properties"
               className="inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-7 py-4 rounded-full font-semibold shadow-elegant hover:scale-105 transition-all"
             >
               Explore Properties
               <ArrowRight className="h-5 w-5" />
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              to="/contact"
               className="inline-flex items-center gap-2 glass text-white px-7 py-4 rounded-full font-semibold hover:bg-white/20 transition-all"
             >
               <Phone className="h-5 w-5" />
               Contact Us
-            </a>
+            </Link>
           </motion.div>
         </div>
 
