@@ -1,15 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Navbar } from "@/components/Navbar";
+import { SiteLayout } from "@/components/SiteLayout";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
+import { FounderTeaser } from "@/components/FounderTeaser";
 import { Services } from "@/components/Services";
 import { Properties } from "@/components/Properties";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
-import { FloatingActions } from "@/components/FloatingActions";
-import { Toaster } from "@/components/ui/sonner";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,27 +28,21 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "keywords", content: "RSN Infra, real estate Hyderabad, open plots, villas, flats, land investment, Kukatpally, JNTU, plots near ORR" },
     ],
-    links: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
   }),
   component: Index,
 });
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Properties />
-        <WhyChooseUs />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-      <FloatingActions />
-      <Toaster position="top-center" richColors />
-    </div>
+    <SiteLayout>
+      <Hero />
+      <About />
+      <FounderTeaser />
+      <Services />
+      <Properties />
+      <WhyChooseUs />
+      <Testimonials />
+      <Contact />
+    </SiteLayout>
   );
 }
