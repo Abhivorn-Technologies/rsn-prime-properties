@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Phone, ShieldCheck, MapPin, Award } from "lucide-react";
+import { ArrowRight, Phone, ShieldCheck, MapPin, Award, ChevronDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const stats = [
@@ -10,9 +10,15 @@ const stats = [
 ];
 
 export function Hero() {
+  const { scrollY } = useScroll();
+  const bgY = useTransform(scrollY, [0, 800], [0, 200]);
+  const bgScale = useTransform(scrollY, [0, 800], [1.05, 1.2]);
+  const contentY = useTransform(scrollY, [0, 600], [0, 120]);
+  const contentOpacity = useTransform(scrollY, [0, 500], [1, 0]);
+
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      <div className="absolute inset-0">
+      <motion.div className="absolute inset-0" style={{ y: bgY, scale: bgScale }}>
         <img
           src={heroBg}
           alt="Premium real estate development"
@@ -21,9 +27,12 @@ export function Hero() {
           height={1280}
         />
         <div className="absolute inset-0 bg-gradient-hero" />
-      </div>
+      </motion.div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+      <motion.div
+        style={{ y: contentY, opacity: contentOpacity }}
+        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full"
+      >
         <div className="max-w-3xl">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
