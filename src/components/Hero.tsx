@@ -48,7 +48,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-6 text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.05]"
+            className="mt-6 text-3xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.1]"
           >
             Build Your Future with{" "}
             <span className="bg-gradient-to-r from-primary-glow to-white bg-clip-text text-transparent">
