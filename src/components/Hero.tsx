@@ -26,7 +26,7 @@ export function Hero() {
           width={1920}
           height={1280}
         />
-        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute inset-0 bg-black/40" />
       </motion.div>
 
       <motion.div
