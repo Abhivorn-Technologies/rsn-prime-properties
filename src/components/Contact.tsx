@@ -82,8 +82,8 @@ export function Contact() {
           </p>
         </motion.div>
 
-        <div className="mt-14 grid lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-2 space-y-4">
+        <div className="mt-14 grid lg:grid-cols-12 gap-8 lg:gap-12">
+          <div className="lg:col-span-5 space-y-4">
             {cards.map((c, i) => (
               <motion.a
                 key={c.label}
@@ -94,14 +94,14 @@ export function Contact() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex gap-4 bg-card rounded-2xl p-6 shadow-soft hover:shadow-elegant transition-all border border-border/40 group"
+                className="flex gap-4 bg-card rounded-2xl p-5 shadow-soft hover:shadow-elegant transition-all border border-border/40 group"
               >
-                <div className="w-14 h-14 shrink-0 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform">
-                  <c.icon className="h-6 w-6 text-primary-foreground" />
+                <div className="w-12 h-12 shrink-0 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform">
+                  <c.icon className="h-5 w-5 text-primary-foreground" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold uppercase tracking-wider text-primary">{c.label}</div>
-                  <div className="mt-1 text-foreground font-medium leading-relaxed">{c.value}</div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-primary">{c.label}</div>
+                  <div className="mt-0.5 text-foreground font-medium leading-relaxed text-sm lg:text-base">{c.value}</div>
                 </div>
               </motion.a>
             ))}
@@ -113,7 +113,7 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-3 bg-card rounded-3xl p-7 sm:p-9 shadow-elegant border border-border/40"
+            className="lg:col-span-7 bg-card rounded-3xl p-7 sm:p-9 shadow-elegant border border-border/40"
           >
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
