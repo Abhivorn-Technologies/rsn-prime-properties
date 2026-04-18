@@ -17,7 +17,7 @@ export function Hero() {
   const contentOpacity = useTransform(scrollY, [0, 500], [1, 0]);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section id="home" className="relative min-h-[100svh] flex items-center pt-20 overflow-hidden">
       <motion.div className="absolute inset-0" style={{ y: bgY, scale: bgScale }}>
         <img
           src={heroBg}
@@ -31,7 +31,7 @@ export function Hero() {
 
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
-        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full"
+        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 w-full"
       >
         <div className="max-w-3xl">
           <motion.span
@@ -48,7 +48,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-6 text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.05]"
+            className="mt-6 text-3xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.1]"
           >
             Build Your Future with{" "}
             <span className="bg-gradient-to-r from-primary-glow to-white bg-clip-text text-transparent">
