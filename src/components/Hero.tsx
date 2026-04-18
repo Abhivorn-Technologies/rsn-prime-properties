@@ -17,7 +17,7 @@ export function Hero() {
   const contentOpacity = useTransform(scrollY, [0, 500], [1, 0]);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section id="home" className="relative min-h-[100svh] flex items-center pt-20 overflow-hidden">
       <motion.div className="absolute inset-0" style={{ y: bgY, scale: bgScale }}>
         <img
           src={heroBg}
