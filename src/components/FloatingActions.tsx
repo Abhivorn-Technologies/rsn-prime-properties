@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Phone, ArrowUp, MessageCircle } from "lucide-react";
+import { Phone, ArrowUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
 export function FloatingActions() {
   const [show, setShow] = useState(false);
@@ -18,10 +19,10 @@ export function FloatingActions() {
         target="_blank"
         rel="noreferrer"
         aria-label="WhatsApp"
-        className="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-elegant hover:scale-110 transition-transform"
+        className="relative w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-elegant hover:scale-110 transition-transform"
       >
-        <MessageCircle className="h-7 w-7" />
-        <span className="absolute w-14 h-14 rounded-full bg-[#25D366] animate-ping opacity-30" />
+        <WhatsAppIcon className="h-7 w-7" />
+        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30" />
       </a>
       <a
         href="tel:9705811199"
