@@ -26,7 +26,7 @@ export function Testimonials() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto"
         >
@@ -42,7 +42,7 @@ export function Testimonials() {
               key={r.name}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="relative bg-card rounded-3xl p-7 shadow-soft border border-border/40 hover:shadow-elegant transition-all"
             >

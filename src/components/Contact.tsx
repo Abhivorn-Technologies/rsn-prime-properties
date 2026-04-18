@@ -7,8 +7,16 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 const schema = z.object({
-  name: z.string().trim().min(2, "Name must be at least 2 characters").max(80),
-  phone: z.string().trim().regex(/^[+\d\s-]{7,15}$/, "Enter a valid phone number"),
+  name: z
+    .string()
+    .trim()
+    .min(2, "Name must be at least 2 characters")
+    .max(80)
+    .regex(/^[A-Za-z\s]+$/, "Please enter a valid name using only alphabets"),
+  phone: z
+    .string()
+    .trim()
+    .regex(/^\d{10}$/, "Please enter a valid 10-digit phone number"),
   email: z.string().trim().email("Invalid email").max(120),
   message: z.string().trim().min(10, "Message must be at least 10 characters").max(800),
 });
@@ -61,7 +69,7 @@ export function Contact() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto"
         >
@@ -84,7 +92,7 @@ export function Contact() {
                 rel="noreferrer"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="flex gap-4 bg-card rounded-2xl p-6 shadow-soft hover:shadow-elegant transition-all border border-border/40 group"
               >
@@ -103,7 +111,7 @@ export function Contact() {
             onSubmit={handleSubmit(onSubmit)}
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6 }}
             className="lg:col-span-3 bg-card rounded-3xl p-7 sm:p-9 shadow-elegant border border-border/40"
           >
@@ -121,6 +129,7 @@ export function Contact() {
                 <label className="block text-sm font-semibold text-foreground mb-2">Phone</label>
                 <input
                   {...register("phone")}
+                  maxLength={10}
                   placeholder="9876543210"
                   className="w-full bg-muted/50 border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
                 />

@@ -1,5 +1,6 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Twitter, Phone, Mail, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 import logo from "@/assets/rsn-logo.png";
 
 const quickLinks = [
@@ -13,19 +14,24 @@ const quickLinks = [
 ] as const;
 
 const services = [
-  "Open Plots & Flats",
-  "Luxury Villas",
-  "Investment Guidance",
-  "Verified Properties",
-  "Legal Assistance",
-];
+  { label: "Open Plots & Flats", to: "/services#services" },
+  { label: "Luxury Villas", to: "/services#services" },
+  { label: "Investment Guidance", to: "/services#services" },
+  { label: "Verified Properties", to: "/services#services" },
+  { label: "Legal Assistance", to: "/services#services" },
+] as const;
 
 export function Footer() {
   return (
-    <footer className="bg-accent text-accent-foreground pt-16 pb-8">
+    <footer className="bg-accent text-accent-foreground pt-16 pb-8 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="bg-white rounded-2xl p-3 inline-block">
               <img src={logo} alt="RSN Infra & Properties" className="h-14 w-auto" />
             </div>
@@ -44,9 +50,14 @@ export function Footer() {
                 </a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             <h4 className="text-lg font-bold">Quick Links</h4>
             <ul className="mt-4 space-y-2">
               {quickLinks.map((l) => (
@@ -57,18 +68,40 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <h4 className="text-lg font-bold">Services</h4>
             <ul className="mt-4 space-y-2">
               {services.map((s) => (
-                <li key={s} className="text-accent-foreground/80 text-sm">{s}</li>
+                <li key={s.to}>
+                  <Link 
+                    to={s.to} 
+                    onClick={() => {
+                      if (window.location.hash === "#services") {
+                        document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
+                    className="text-accent-foreground/80 hover:text-primary-glow transition-colors text-sm"
+                  >
+                    {s.label}
+                  </Link>
+                </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             <h4 className="text-lg font-bold">Contact Info</h4>
             <ul className="mt-4 space-y-3 text-sm">
               <li className="flex gap-3">
@@ -88,12 +121,18 @@ export function Footer() {
                 </span>
               </li>
             </ul>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-white/10 text-center text-sm text-accent-foreground/70">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-12 pt-6 border-t border-white/10 text-center text-sm text-accent-foreground/70"
+        >
           © 2025 RSN Infra & Properties. All Rights Reserved.
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

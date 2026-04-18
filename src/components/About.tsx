@@ -45,7 +45,7 @@ export function About() {
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.7 }}
               className="relative"
             >
@@ -67,7 +67,7 @@ export function About() {
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.7 }}
             >
               <span className="text-sm font-bold uppercase tracking-widest text-primary">About Us</span>
@@ -97,7 +97,7 @@ export function About() {
                     key={f}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, amount: 0.2 }}
                     transition={{ duration: 0.4, delay: i * 0.05 }}
                     className="flex items-center gap-3 bg-card rounded-xl p-3 shadow-soft border border-border/50"
                   >
@@ -117,7 +117,7 @@ export function About() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-2xl mx-auto"
           >
@@ -133,7 +133,7 @@ export function About() {
                 key={p.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-card rounded-3xl p-7 shadow-soft border border-border/50 hover:shadow-elegant hover:-translate-y-1 transition-all"
               >
@@ -154,7 +154,7 @@ export function About() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-2xl mx-auto"
           >
@@ -172,7 +172,7 @@ export function About() {
                 key={m.year}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-card rounded-3xl p-6 shadow-soft border border-border/50 relative overflow-hidden group hover:shadow-elegant transition-all"
               >

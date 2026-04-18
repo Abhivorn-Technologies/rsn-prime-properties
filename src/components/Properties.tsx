@@ -23,7 +23,7 @@ export function Properties() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto"
         >
@@ -42,7 +42,7 @@ export function Properties() {
               key={p.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.55, delay: i * 0.07 }}
               whileHover={{ y: -10 }}
               className="group bg-card rounded-3xl overflow-hidden shadow-soft hover:shadow-elegant transition-all border border-border/40"

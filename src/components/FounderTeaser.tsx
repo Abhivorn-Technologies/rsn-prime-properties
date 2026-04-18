@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { ArrowRight, Quote } from "lucide-react";
 import founderImg from "@/assets/founder.jpg";
 
@@ -11,7 +11,7 @@ export function FounderTeaser() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6 }}
             className="relative max-w-md mx-auto w-full"
           >
@@ -29,7 +29,7 @@ export function FounderTeaser() {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6 }}
           >
             <span className="text-sm font-bold uppercase tracking-widest text-primary">
