@@ -1,6 +1,7 @@
-import { useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { useState, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/rsn-logo.png";
 
 const links = [
@@ -15,27 +16,61 @@ const links = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-background/95 backdrop-blur-xl shadow-soft border-b border-border">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img src={logo} alt="RSN Infra & Properties" className="h-10 md:h-12 w-auto" />
-        </Link>
+    <header 
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+        scrolled 
+          ? "bg-background/80 backdrop-blur-xl shadow-elegant py-2" 
+          : "bg-transparent py-4"
+      }`}
+    >
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-18">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Link to="/" className="flex items-center gap-2 shrink-0">
+            <img 
+              src={logo} 
+              alt="RSN Infra & Properties" 
+              className={`transition-all duration-300 ${scrolled ? "h-8 md:h-10" : "h-10 md:h-12"} w-auto`} 
+            />
+          </Link>
+        </motion.div>
 
         <ul className="hidden lg:flex items-center gap-6 xl:gap-8">
-          {links.map((l) => (
-            <li key={l.to}>
-              <Link
+          {links.map((l, i) => (
+            <motion.li 
+              key={l.to}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: i * 0.05 }}
+            >
+              <NavLink
                 to={l.to}
-                className="text-sm font-semibold text-foreground/80 hover:text-primary transition-colors relative group"
-                activeProps={{ className: "text-primary" }}
-                activeOptions={{ exact: true }}
+                end
+                className={({ isActive }) => 
+                  `text-sm font-semibold transition-colors relative group ${
+                    isActive ? "text-primary" : "text-foreground/80 hover:text-primary"
+                  }`
+                }
               >
                 {l.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all group-hover:w-full" />
-              </Link>
-            </li>
+              </NavLink>
+            </motion.li>
           ))}
         </ul>
 
@@ -66,15 +101,18 @@ export function Navbar() {
         <ul className="px-4 py-4 space-y-1">
           {links.map((l) => (
             <li key={l.to}>
-              <Link
+              <NavLink
                 to={l.to}
+                end
                 onClick={() => setOpen(false)}
-                className="block px-4 py-3 rounded-lg text-foreground hover:bg-secondary font-medium"
-                activeProps={{ className: "bg-secondary text-primary" }}
-                activeOptions={{ exact: true }}
+                className={({ isActive }) =>
+                  `block px-4 py-3 rounded-lg font-medium hover:bg-secondary ${
+                    isActive ? "bg-secondary text-primary" : "text-foreground"
+                  }`
+                }
               >
                 {l.label}
-              </Link>
+              </NavLink>
             </li>
           ))}
           <li>

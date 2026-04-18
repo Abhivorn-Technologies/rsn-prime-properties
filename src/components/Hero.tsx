@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { ArrowRight, Phone, ShieldCheck, MapPin, Award, ChevronDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 

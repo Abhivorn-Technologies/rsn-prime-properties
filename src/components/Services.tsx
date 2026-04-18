@@ -2,22 +2,52 @@ import { motion } from "framer-motion";
 import { Building2, Home, TrendingUp, ShieldCheck, FileCheck, HeartHandshake } from "lucide-react";
 
 const services = [
-  { icon: Home, title: "Open Plots & Flats", desc: "Premium residential plots and modern flats in high-growth locations." },
-  { icon: Building2, title: "Villas", desc: "Luxury villas designed for comfort, style, and long-term value." },
-  { icon: TrendingUp, title: "Investment Guidance", desc: "Expert advice to help you invest smartly with maximum returns." },
-  { icon: ShieldCheck, title: "Verified Properties", desc: "Every property is verified for clear title and full legal compliance." },
-  { icon: FileCheck, title: "Clear Title & Documentation", desc: "Hassle-free paperwork and complete transparency at every step." },
-  { icon: HeartHandshake, title: "End-to-End Support", desc: "From site visit to registration — we are with you all the way." },
+  { 
+    id: "open-plots-flats",
+    icon: Home, 
+    title: "Open Plots & Flats", 
+    desc: "Premium residential plots and modern flats in high-growth locations." 
+  },
+  { 
+    id: "villas",
+    icon: Building2, 
+    title: "Villas", 
+    desc: "Luxury villas designed for comfort, style, and long-term value." 
+  },
+  { 
+    id: "investment-guidance",
+    icon: TrendingUp, 
+    title: "Investment Guidance", 
+    desc: "Expert advice to help you invest smartly with maximum returns." 
+  },
+  { 
+    id: "verified-properties",
+    icon: ShieldCheck, 
+    title: "Verified Properties", 
+    desc: "Every property is verified for clear title and full legal compliance." 
+  },
+  { 
+    id: "legal-documentation",
+    icon: FileCheck, 
+    title: "Clear Title & Documentation", 
+    desc: "Hassle-free paperwork and complete transparency at every step." 
+  },
+  { 
+    id: "end-to-end-support",
+    icon: HeartHandshake, 
+    title: "End-to-End Support", 
+    desc: "From site visit to registration — we are with you all the way." 
+  },
 ];
 
 export function Services() {
   return (
-    <section id="services" className="py-20 lg:py-28 bg-background">
+    <section id="services" className="py-20 lg:py-28 bg-background scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto"
         >
@@ -29,14 +59,15 @@ export function Services() {
             Comprehensive real estate solutions tailored to your investment goals.
           </p>
         </motion.div>
-
+ 
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, i) => (
             <motion.div
               key={s.title}
+              id={s.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               whileHover={{ y: -8 }}
               className="group relative bg-card rounded-3xl p-7 shadow-soft hover:shadow-elegant transition-all border border-border/40 overflow-hidden"
