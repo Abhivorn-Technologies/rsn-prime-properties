@@ -10,7 +10,7 @@ import Contact from "./routes/contact";
 
 // Scroll to top or specific section on navigation
 function ScrollToTop() {
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, key } = useLocation();
 
   useEffect(() => {
     if (hash) {
@@ -25,7 +25,7 @@ function ScrollToTop() {
     } else {
       window.scrollTo(0, 0);
     }
-  }, [pathname, hash]);
+  }, [pathname, hash, key]);
 
   return null;
 }
