@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Quote } from "lucide-react";
-import founderImg from "@/assets/founder.jpg";
+import ceoPhoto from "@/assets/ceo_photo.jpeg";
 
 export function FounderTeaser() {
   return (
@@ -16,9 +16,9 @@ export function FounderTeaser() {
             className="relative max-w-md mx-auto w-full"
           >
             <div className="absolute -inset-3 bg-gradient-primary rounded-3xl opacity-25 blur-xl" />
-            <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[4/5]">
+            <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[4/5] bg-card/50">
               <img
-                src={founderImg}
+                src={ceoPhoto}
                 alt="Founder & CEO of RSN Infra & Properties"
                 className="w-full h-full object-cover object-top"
                 loading="lazy"

@@ -96,7 +96,7 @@ export function Navbar() {
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ${
           open ? "max-h-[28rem]" : "max-h-0"
-        } bg-background/95 backdrop-blur-xl border-t border-border`}
+        } bg-background/95 backdrop-blur-xl`}
       >
         <ul className="px-4 py-4 space-y-1">
           {links.map((l) => (

@@ -129,9 +129,13 @@ export function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-12 pt-6 border-t border-white/10 text-center text-sm text-accent-foreground/70"
+          className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-accent-foreground/70"
         >
-          © 2025 RSN Infra & Properties. All Rights Reserved.
+          <p className="tracking-wide">© 2026 &nbsp; RSN Infra & Properties. All Rights Reserved.</p>
+          <div className="flex gap-6">
+            <Link to="/privacy" className="hover:text-primary-glow transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-primary-glow transition-colors">Terms & Conditions</Link>
+          </div>
         </motion.div>
       </div>
     </footer>
