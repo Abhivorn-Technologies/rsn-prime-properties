@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Quote, Award, Users, TrendingUp } from "lucide-react";
-import founderImg from "@/assets/founder.jpg";
+import ceoPhoto from "@/assets/ceo_photo.jpeg";
 
 const stats = [
   { icon: Award, value: "10+", label: "Years Experience" },
@@ -39,7 +39,7 @@ export function Founder() {
             <div className="absolute -inset-4 bg-gradient-primary rounded-3xl opacity-25 blur-2xl" />
             <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[4/5] bg-gradient-to-br from-primary/10 to-primary-glow/10">
               <img
-                src={founderImg}
+                src={ceoPhoto}
                 alt="Founder & CEO of RSN Infra & Properties"
                 className="w-full h-full object-cover object-top"
                 loading="lazy"
