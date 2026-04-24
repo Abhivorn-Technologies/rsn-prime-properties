@@ -7,6 +7,8 @@ import Services from "./routes/services";
 import Testimonials from "./routes/testimonials";
 import WhyChooseUs from "./routes/why-choose-us";
 import Contact from "./routes/contact";
+import Projects from "./routes/projects";
+
 
 // Scroll to top or specific section on navigation
 function ScrollToTop() {
@@ -41,6 +43,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/why-choose-us" element={<WhyChooseUs />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
         
         {/* Fallback for 404 - you can create a dedicated NotFound page later */}

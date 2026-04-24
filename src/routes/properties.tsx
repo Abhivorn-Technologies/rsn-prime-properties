@@ -1,7 +1,7 @@
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHeader } from "@/components/PageHeader";
 import { Properties } from "@/components/Properties";
-import { OngoingProjects } from "@/components/OngoingProjects";
+
 
 export default function PropertiesPage() {
   return (
@@ -14,7 +14,6 @@ export default function PropertiesPage() {
         breadcrumb="Properties"
       />
       <Properties />
-      <OngoingProjects />
     </SiteLayout>
   );
 }
