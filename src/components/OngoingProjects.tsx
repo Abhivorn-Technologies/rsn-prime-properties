@@ -429,8 +429,8 @@ export function OngoingProjects() {
         </div>
       </section>
 
-      {/* Project Offerings Section: Static Grid */}
-      <section className="py-20 bg-muted/30">
+      {/* Project Offerings Section: Bento Grid */}
+      <section className="py-24 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -439,28 +439,45 @@ export function OngoingProjects() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
+            <span className="text-sm font-bold uppercase tracking-widest text-primary mb-3 block">Premium Features</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
               World-Class <span className="gradient-text">Amenities & Lifestyle</span>
             </h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+              Experience a blend of luxury, comfort, and nature with our thoughtfully curated project features.
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
-            {images.map((img, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="rounded-2xl overflow-hidden group shadow-soft hover:shadow-elegant transition-all duration-500"
-              >
-                <img
-                  src={img}
-                  alt={`Project offering ${index + 1}`}
-                  className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
-                />
-              </motion.div>
-            ))}
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+            {images.map((img, index) => {
+              const labels = [
+                "Grand Entrance", "Clubhouse", "Swimming Pool", "Green Parks", 
+                "Kids Area", "Gym", "Jogging Track", "Security", 
+                "Party Lawn", "Yoga Deck", "Street Lights", "Drainage"
+              ];
+
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
+                  className="break-inside-avoid group relative rounded-3xl overflow-hidden shadow-soft hover:shadow-elegant transition-all duration-500 border border-border/50 bg-white"
+                >
+                  <img
+                    src={img}
+                    alt={labels[index]}
+                    className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    <p className="text-white font-bold text-lg">{labels[index]}</p>
+                    <div className="w-8 h-1 bg-primary mt-2 rounded-full" />
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
