@@ -9,7 +9,7 @@ export default function ProjectsPage() {
         eyebrow="Our Vision in Action"
         title="Landmark"
         highlight="Projects"
-        description="Explore our current developments and upcoming premium destinations across Hyderabad's high-growth corridors."
+        description="Explore our portfolio of existing landmarks, current developments, and upcoming premium destinations across Hyderabad's high-growth corridors."
         breadcrumb="Projects"
       />
       <OngoingProjects />

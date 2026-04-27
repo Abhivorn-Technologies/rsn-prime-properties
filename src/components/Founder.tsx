@@ -21,7 +21,7 @@ export function Founder() {
         >
           <span className="text-sm font-bold uppercase tracking-widest text-primary">Leadership</span>
           <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold">
-            Meet Our <span className="gradient-text">Founder & CEO</span>
+            Meet Our <span className="gradient-text">Founder</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
             The vision and passion behind RSN Infra & Properties.
@@ -37,16 +37,16 @@ export function Founder() {
             className="lg:col-span-2 relative"
           >
             <div className="absolute -inset-4 bg-gradient-primary rounded-3xl opacity-25 blur-2xl" />
-            <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[4/5] bg-gradient-to-br from-primary/10 to-primary-glow/10">
+            <div className="relative rounded-3xl overflow-hidden shadow-elegant bg-gradient-to-br from-primary/10 to-primary-glow/10">
               <img
                 src={ceoPhoto}
-                alt="Founder & CEO of RSN Infra & Properties"
-                className="w-full h-full object-cover object-top"
+                alt="Founder of RSN Infra & Properties"
+                className="w-full h-auto block"
                 loading="lazy"
               />
             </div>
             <div className="absolute -bottom-6 -right-4 sm:-right-6 bg-card text-foreground p-4 sm:p-5 rounded-2xl shadow-elegant border border-border w-max max-w-[95vw]">
-              <div className="text-[10px] sm:text-xs uppercase tracking-wider text-primary font-bold">Founder & CEO</div>
+              <div className="text-[10px] sm:text-xs uppercase tracking-wider text-primary font-bold">Founder</div>
               <div className="mt-1 text-sm sm:text-base font-bold whitespace-nowrap">CHERUKUPALLY NARENDAR</div>
               <div className="text-xs sm:text-sm text-muted-foreground mt-0.5 font-medium">RSN Infra & Properties</div>
             </div>

@@ -19,13 +19,13 @@ export function FounderTeaser() {
             <div className="relative rounded-3xl overflow-hidden shadow-elegant aspect-[4/5] bg-card/50">
               <img
                 src={ceoPhoto}
-                alt="Founder & CEO of RSN Infra & Properties"
+                alt="Founder of RSN Infra & Properties"
                 className="w-full h-full object-cover object-top"
                 loading="lazy"
               />
             </div>
             <div className="absolute -bottom-6 -right-4 sm:-right-6 bg-card text-foreground p-4 sm:p-5 rounded-2xl shadow-elegant border border-border w-max max-w-[95vw] z-10">
-              <div className="text-[10px] sm:text-xs uppercase tracking-wider text-primary font-bold">Founder & CEO</div>
+              <div className="text-[10px] sm:text-xs uppercase tracking-wider text-primary font-bold">Founder</div>
               <div className="mt-1 text-sm sm:text-base font-bold whitespace-nowrap">CHERUKUPALLY NARENDAR</div>
               <div className="text-xs sm:text-sm text-muted-foreground mt-0.5 font-medium">RSN Infra & Properties</div>
             </div>

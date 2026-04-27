@@ -2,6 +2,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { PageHeader } from "@/components/PageHeader";
 import { About } from "@/components/About";
 import { Founder } from "@/components/Founder";
+import { Workspace } from "@/components/Workspace";
 
 export default function AboutPage() {
   return (
@@ -15,6 +16,7 @@ export default function AboutPage() {
       />
       <About />
       <Founder />
+      <Workspace />
     </SiteLayout>
   );
 }

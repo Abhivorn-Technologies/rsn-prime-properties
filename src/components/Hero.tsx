@@ -48,7 +48,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-6 text-3xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.1]"
+            className="mt-6 text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight"
           >
             Build Your Future with{" "}
             <span className="bg-gradient-to-r from-primary-glow to-white bg-clip-text text-transparent">
@@ -61,7 +61,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-6 text-lg sm:text-xl text-white/90 max-w-2xl"
+            className="mt-4 text-base sm:text-lg text-white/90 max-w-xl"
           >
             Premium Open Plots, Villas, Flats & Secure Property Investments in High Growth Locations.
           </motion.p>
@@ -70,20 +70,20 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="mt-8 flex flex-wrap gap-4"
+            className="mt-6 flex flex-wrap gap-3"
           >
             <Link
               to="/properties"
-              className="inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-7 py-4 rounded-full font-semibold shadow-elegant hover:scale-105 transition-all"
+              className="inline-flex items-center gap-2 bg-white text-primary px-4 py-2 rounded-full font-bold text-xs shadow-elegant hover:scale-105 transition-all"
             >
               Explore Properties
-              <ArrowRight className="h-5 w-5" />
+              <ArrowRight className="h-3.5 w-3.5" />
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 glass text-white px-7 py-4 rounded-full font-semibold hover:bg-white/20 transition-all"
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white text-white px-4 py-2 rounded-full font-bold text-xs hover:bg-white hover:text-primary transition-all"
             >
-              <Phone className="h-5 w-5" />
+              <Phone className="h-3.5 w-3.5" />
               Contact Us
             </Link>
           </motion.div>
@@ -94,19 +94,19 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl"
+          className="mt-12 grid grid-cols-1 sm:flex sm:flex-wrap lg:grid lg:grid-cols-3 gap-3 max-w-4xl"
         >
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4, repeat: Infinity, delay: i * 0.4 }}
-              className="glass rounded-2xl p-5 flex items-center gap-3"
+              className="bg-white/95 backdrop-blur-xl rounded-2xl p-4 flex items-center gap-3 shadow-elegant border border-white/20"
             >
-              <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0 shadow-glow">
-                <s.icon className="h-6 w-6 text-primary-foreground" />
+              <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0 shadow-glow">
+                <s.icon className="h-5 w-5 text-primary-foreground" />
               </div>
-              <span className="font-semibold text-white text-lg">{s.label}</span>
+              <span className="font-bold text-primary text-base whitespace-nowrap">{s.label}</span>
             </motion.div>
           ))}
         </motion.div>
