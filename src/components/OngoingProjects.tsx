@@ -20,8 +20,6 @@ import lemonTreeResort from "@/assets/lemon-tree-resort.png";
 import oneNineRezo from "@/assets/one-nine-rezo.png";
 
 export function OngoingProjects() {
-  const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12];
-  
   return (
     <div className="bg-background">
       {/* Project 1: Supraja Iris Resort */}
@@ -449,35 +447,35 @@ export function OngoingProjects() {
           </motion.div>
 
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-            {images.map((img, index) => {
-              const labels = [
-                "Grand Entrance", "Clubhouse", "Swimming Pool", "Green Parks", 
-                "Kids Area", "Gym", "Jogging Track", "Security", 
-                "Party Lawn", "Yoga Deck", "Street Lights", "Drainage"
-              ];
-
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
-                  className="break-inside-avoid group relative rounded-3xl overflow-hidden shadow-soft hover:shadow-elegant transition-all duration-500 border border-border/50 bg-white"
-                >
-                  <img
-                    src={img}
-                    alt={labels[index]}
-                    className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <p className="text-white font-bold text-lg">{labels[index]}</p>
-                    <div className="w-8 h-1 bg-primary mt-2 rounded-full" />
-                  </div>
-                </motion.div>
-              );
-            })}
+            {[
+              { img: image1,  label: "Grand Entrance" },
+              { img: image4,  label: "Green Parks" },
+              { img: image7,  label: "Jogging Track" },
+              { img: image10, label: "Yoga Deck" },
+              { img: image3,  label: "Swimming Pool" },
+              { img: image6,  label: "Gym" },
+              { img: image9,  label: "Party Lawn" },
+              { img: image12, label: "Drainage" },
+              { img: image2,  label: "Clubhouse" },
+              { img: image5,  label: "Kids Area" },
+              { img: image8,  label: "Security" },
+              { img: image11, label: "Street Lights" },
+            ].map(({ img, label }, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
+                className="break-inside-avoid group relative rounded-3xl overflow-hidden shadow-soft hover:shadow-elegant transition-shadow duration-300 border border-border/50 bg-white"
+              >
+                <img
+                  src={img}
+                  alt={label}
+                  className="w-full h-auto block transition-transform duration-500 group-hover:scale-105"
+                />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

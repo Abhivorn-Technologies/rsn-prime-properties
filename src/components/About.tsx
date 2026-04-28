@@ -36,10 +36,10 @@ const pillars = [
 ];
 
 const milestones = [
-  { year: "2014", title: "Founded", text: "Started with a focus on premium open plots in Hyderabad outskirts." },
-  { year: "2018", title: "Expanded Portfolio", text: "Added luxury villas, flats and HMDA-approved layouts." },
-  { year: "2021", title: "500+ Families Served", text: "Crossed a milestone of 500+ trusted property handovers." },
-  { year: "2024", title: "Statewide Reach", text: "Now serving high-growth corridors across Telangana." },
+  { year: "2019", title: "Founded", text: "Started with a focus on premium open plots in Hyderabad outskirts." },
+  { year: "2020", title: "Expanded Portfolio", text: "Added luxury villas, flats and HMDA-approved layouts." },
+  { year: "2022", title: "500+ Families Served", text: "Crossed a milestone of 500+ trusted property handovers." },
+  { year: "2025", title: "Statewide Reach", text: "Now serving high-growth corridors across Telangana." },
 ];
 
 export function About() {
@@ -210,7 +210,7 @@ export function About() {
               <Sparkles className="h-4 w-4" /> Our Journey
             </span>
             <h2 className="mt-2 text-3xl sm:text-4xl font-bold">
-              A Decade of <span className="gradient-text">Trusted Growth</span>
+              A Legacy of <span className="gradient-text">Trusted Growth</span>
             </h2>
           </motion.div>
 

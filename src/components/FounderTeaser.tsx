@@ -25,9 +25,8 @@ export function FounderTeaser() {
               />
             </div>
             <div className="absolute -bottom-6 -right-4 sm:-right-6 bg-card text-foreground p-4 sm:p-5 rounded-2xl shadow-elegant border border-border w-max max-w-[95vw] z-10">
-              <div className="text-[10px] sm:text-xs uppercase tracking-wider text-primary font-bold">Founder</div>
-              <div className="mt-1 text-sm sm:text-base font-bold whitespace-nowrap">CHERUKUPALLY NARENDAR</div>
-              <div className="text-xs sm:text-sm text-muted-foreground mt-0.5 font-medium">RSN Infra & Properties</div>
+              <div className="text-[10px] sm:text-xs uppercase tracking-wider text-primary font-bold text-center">Founder</div>
+              <div className="text-[10px] sm:text-xs text-muted-foreground mt-1 font-medium text-center">RSN Infra & Properties</div>
             </div>
           </motion.div>
 
@@ -37,22 +36,39 @@ export function FounderTeaser() {
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-sm font-bold uppercase tracking-widest text-primary">
-              Meet the Founder
-            </span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-bold">
-              A vision built on <span className="gradient-text">trust</span>
-            </h2>
-            <Quote className="h-10 w-10 text-primary/30 mt-5" />
-            <p className="mt-3 text-lg font-display font-semibold text-foreground italic leading-snug">
-              "We don't just sell plots — we help you build your future, your dreams,
-              and your financial stability."
-            </p>
-            <p className="mt-5 text-muted-foreground leading-relaxed">
-              With over a decade of expertise in Hyderabad's real estate market, our
-              founder leads RSN Infra & Properties with one mission: making land ownership
-              transparent, secure, and genuinely rewarding for every family.
-            </p>
+            <Quote className="h-12 w-12 text-primary/30" />
+
+            {/* Highlighted Founder Name */}
+            <div className="mt-3 inline-flex flex-col">
+              <span className="text-2xl sm:text-3xl font-black gradient-text tracking-tight">
+                CHERUKAPALLY NARENDAR
+              </span>
+              <span className="mt-1 text-xs font-bold uppercase tracking-widest text-primary/70">
+                Founder — RSN Infra &amp; Properties
+              </span>
+              <div className="mt-2 h-1 w-16 rounded-full bg-gradient-to-r from-primary to-primary-glow" />
+            </div>
+
+            <blockquote className="mt-5 text-xl sm:text-2xl font-display font-semibold text-foreground leading-snug">
+              "Real estate isn't just about land or buildings — it's about helping families
+              secure their future, one trusted investment at a time."
+            </blockquote>
+
+            <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Narendar started solo in 2019 with a single belief — that every family deserves
+                honest, transparent guidance when investing in land. With no large team, just
+                determination and a deep knowledge of Hyderabad's emerging corridors, he built
+                RSN Infra &amp; Properties from the ground up.
+              </p>
+              <p>
+                By 2020, the portfolio expanded to luxury villas and HMDA-approved layouts.
+                By 2022, over 500 families had trusted RSN for their property journeys. Today,
+                in 2025, RSN serves high-growth corridors across Telangana — a testament to
+                one man's vision turned into a thriving brand.
+              </p>
+            </div>
+
             <Link
               to="/about"
               className="mt-7 inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-6 py-3 rounded-full font-semibold shadow-soft hover:shadow-elegant hover:scale-105 transition-all"

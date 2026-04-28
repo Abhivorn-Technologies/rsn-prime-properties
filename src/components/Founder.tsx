@@ -3,7 +3,7 @@ import { Quote, Award, Users, TrendingUp } from "lucide-react";
 import ceoPhoto from "@/assets/ceo_photo.jpeg";
 
 const stats = [
-  { icon: Award, value: "10+", label: "Years Experience" },
+  { icon: Award, value: "6+", label: "Years Experience" },
   { icon: Users, value: "500+", label: "Happy Clients" },
   { icon: TrendingUp, value: "100%", label: "Trusted Deals" },
 ];
@@ -24,11 +24,12 @@ export function Founder() {
             Meet Our <span className="gradient-text">Founder</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
-            The vision and passion behind RSN Infra & Properties.
+            The vision and passion behind RSN Infra &amp; Properties.
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-center">
+          {/* Left: Photo only — no overlay card */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -40,18 +41,19 @@ export function Founder() {
             <div className="relative rounded-3xl overflow-hidden shadow-elegant bg-gradient-to-br from-primary/10 to-primary-glow/10">
               <img
                 src={ceoPhoto}
-                alt="Founder of RSN Infra & Properties"
+                alt="Founder of RSN Infra &amp; Properties"
                 className="w-full h-auto block"
                 loading="lazy"
               />
             </div>
-            <div className="absolute -bottom-6 -right-4 sm:-right-6 bg-card text-foreground p-4 sm:p-5 rounded-2xl shadow-elegant border border-border w-max max-w-[95vw]">
-              <div className="text-[10px] sm:text-xs uppercase tracking-wider text-primary font-bold">Founder</div>
-              <div className="mt-1 text-sm sm:text-base font-bold whitespace-nowrap">CHERUKUPALLY NARENDAR</div>
-              <div className="text-xs sm:text-sm text-muted-foreground mt-0.5 font-medium">RSN Infra & Properties</div>
+            {/* Re-added card on image without name */}
+            <div className="absolute -bottom-6 -right-4 sm:-right-6 bg-card text-foreground p-4 sm:p-5 rounded-2xl shadow-elegant border border-border w-max max-w-[95vw] z-10">
+              <div className="text-[10px] sm:text-xs uppercase tracking-wider text-primary font-bold text-center">Founder</div>
+              <div className="text-[10px] sm:text-xs text-muted-foreground mt-1 font-medium text-center">RSN Infra &amp; Properties</div>
             </div>
           </motion.div>
 
+          {/* Right: Content with highlighted name */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -60,22 +62,35 @@ export function Founder() {
             className="lg:col-span-3"
           >
             <Quote className="h-12 w-12 text-primary/30" />
-            <blockquote className="mt-4 text-xl sm:text-2xl font-display font-semibold text-foreground leading-snug">
+
+            {/* Highlighted Founder Name */}
+            <div className="mt-3 inline-flex flex-col">
+              <span className="text-2xl sm:text-3xl font-black gradient-text tracking-tight">
+                CHERUKAPALLY NARENDAR
+              </span>
+              <span className="mt-1 text-xs font-bold uppercase tracking-widest text-primary/70">
+                Founder — RSN Infra &amp; Properties
+              </span>
+              <div className="mt-2 h-1 w-16 rounded-full bg-gradient-to-r from-primary to-primary-glow" />
+            </div>
+
+            <blockquote className="mt-5 text-xl sm:text-2xl font-display font-semibold text-foreground leading-snug">
               "Real estate isn't just about land or buildings — it's about helping families
               secure their future, one trusted investment at a time."
             </blockquote>
 
             <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                With over a decade in Hyderabad's fast-evolving property market, our founder
-                established RSN Infra & Properties on a simple belief: every customer deserves
-                clarity, honesty, and a fair deal. From the first site visit to final
-                registration, his team is involved at every stage.
+                Narendar started solo in 2019 with a single belief — that every family deserves
+                honest, transparent guidance when investing in land. With no large team, just
+                determination and a deep knowledge of Hyderabad's emerging corridors, he built
+                RSN Infra &amp; Properties from the ground up.
               </p>
               <p>
-                Under his leadership, RSN has grown from a small advisory practice into a
-                trusted name for premium open plots, villas and high-ROI investment land
-                across Hyderabad's most promising corridors.
+                By 2020, the portfolio expanded to luxury villas and HMDA-approved layouts.
+                By 2022, over 500 families had trusted RSN for their property journeys. Today,
+                in 2025, RSN serves high-growth corridors across Telangana — a testament to
+                one man's vision turned into a thriving brand.
               </p>
             </div>
 
