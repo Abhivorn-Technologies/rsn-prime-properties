@@ -58,7 +58,7 @@ export function Navbar() {
         </div>
       </div>
 
-      <nav className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-16" : "h-20"}`}>
+      <nav className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300 ${scrolled ? "h-12 lg:h-16" : "h-14 lg:h-20"}`}>
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -68,7 +68,7 @@ export function Navbar() {
             <img 
               src={logo} 
               alt="RSN Infra & Properties" 
-              className={`transition-all duration-300 ${scrolled ? "h-8 md:h-10" : "h-10 md:h-12"} w-auto`} 
+              className={`transition-all duration-300 ${scrolled ? "h-6 lg:h-10" : "h-8 lg:h-12"} w-auto`} 
             />
           </Link>
         </motion.div>
