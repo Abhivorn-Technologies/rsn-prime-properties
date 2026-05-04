@@ -89,7 +89,7 @@ export function Founder() {
               <p>
                 By 2020, the portfolio expanded to luxury villas and HMDA-approved layouts.
                 By 2022, over 500 families had trusted RSN for their property journeys. Today,
-                in 2025, RSN serves high-growth corridors across Telangana — a testament to
+                in 2026, RSN serves high-growth corridors across Telangana — a testament to
                 one man's vision turned into a thriving brand.
               </p>
             </div>
