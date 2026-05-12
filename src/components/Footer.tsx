@@ -133,15 +133,24 @@ export function Footer() {
         >
           <p className="tracking-wide text-center md:text-left">
             © 2026 &nbsp; RSN Infra & Properties. All Rights Reserved. &nbsp; | &nbsp; 
-            <span className="inline-block">
+            <span className="inline-block text-white">
               Developed by{" "}
               <a 
                 href="https://abhivorn.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-primary-glow hover:text-white transition-colors font-medium"
+                className="hover:text-primary-glow transition-colors font-medium"
               >
                 Abhivorn Technologies
+              </a>
+              {" "}and{" "}
+              <a 
+                href="https://www.digilevelup.in/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-primary-glow transition-colors font-medium"
+              >
+                Digi LevelUp
               </a>
             </span>
           </p>
